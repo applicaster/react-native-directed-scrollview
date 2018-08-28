@@ -1,5 +1,5 @@
 {
-  "name": "react-native-directed-scrollview",
+  "name": "zy-react-native-directed-scrollview",
   "version": "1.3.7",
   "description":
     "A natively implemented scrollview component which lets you specify different scroll directions for child content.",
@@ -10,7 +10,7 @@
   "repository": {
     "type": "git",
     "url":
-      "git+https://github.com/chrisfisher/react-native-directed-scrollview.git"
+      "git+https://github.com/ZY-Market/react-native-directed-scrollview.git"
   },
   "keywords": [
     "react-component",
@@ -38,8 +38,8 @@
   "license": "MIT",
   "bugs": {
     "url":
-      "https://github.com/chrisfisher/react-native-directed-scrollview/issues"
+      "https://github.com/ZY-Market/react-native-directed-scrollview/issues"
   },
   "homepage":
-    "https://github.com/chrisfisher/react-native-directed-scrollview#readme"
+    "https://github.com/ZY-Market/react-native-directed-scrollview#readme"
 }

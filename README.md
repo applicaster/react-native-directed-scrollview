@@ -29,7 +29,7 @@ The following methods are supported:
 
 ## Installation
 
-- `npm install react-native-directed-scrollview --save`
+- `npm install zy-react-native-directed-scrollview --save`
 - `react-native link` (or `rnpm link`)
 
 ## Usage
@@ -37,7 +37,7 @@ The following methods are supported:
 To work properly this component requires that a fixed-size content container be specified through the **contentContainerStyle** prop.
 
 ```javascript
-import ScrollView, { ScrollViewChild } from 'react-native-directed-scrollview';
+import ScrollView, { ScrollViewChild } from 'zy-react-native-directed-scrollview';
 ...
 
 export default class Example extends Component {
@@ -78,4 +78,4 @@ const styles = StyleSheet.create({
 })
 ```
 
-See the [example project](https://github.com/chrisfisher/react-native-directed-scrollview/tree/master/example) for more detail.
+See the [example project](https://github.com/ZY-Market/react-native-directed-scrollview/tree/master/example) for more detail.
