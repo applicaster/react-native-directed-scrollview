@@ -45,7 +45,7 @@ public class DirectedScrollView extends ReactViewGroup {
   private float startScrollY;
   private float startTouchX;
   private float startTouchY;
-  private float scaleFactor = 1.0f;
+  private float scaleFactor = 0.4f;
   private boolean isScaleInProgress;
   private boolean isScrollInProgress;
   private float touchSlop;
@@ -67,7 +67,9 @@ public class DirectedScrollView extends ReactViewGroup {
   @Override
   protected void onAttachedToWindow() {
     super.onAttachedToWindow();
-
+    scaleChildren(false);
+    onActionUp();
+    reactContext = (ReactContext)this.getContext();
     anchorChildren();
   }
 

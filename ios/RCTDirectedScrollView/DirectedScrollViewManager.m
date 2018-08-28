@@ -152,7 +152,7 @@ RCT_EXPORT_METHOD(zoomToStart:(nonnull NSNumber *)reactTag
          UIView *view = viewRegistry[reactTag];
          if ([view conformsToProtocol:@protocol(RCTScrollableProtocol)]) {
              [(id<RCTScrollableProtocol>)view zoomToRect:CGRectMake(0, 0, 0, 0) animated:animated];
-             [((RCTScrollView*)view).scrollView setZoomScale:1.0 animated:animated];
+             [((RCTScrollView*)view).scrollView setZoomScale:0.4 animated:animated];
          } else {
              RCTLogError(@"tried to zoomToRect: on non-RCTScrollableProtocol view %@ with tag #%@", view, reactTag);
          }
