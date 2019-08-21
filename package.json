@@ -1,6 +1,6 @@
 {
   "name": "@applicaster/react-native-directed-scrollview",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description":
     "A natively implemented scrollview component which lets you specify different scroll directions for child content.",
   "main": "index.js",

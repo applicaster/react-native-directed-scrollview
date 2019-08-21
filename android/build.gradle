@@ -16,6 +16,20 @@ android {
     lintOptions {
        warning 'InvalidPackage'
     }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
 }
 
 dependencies {
