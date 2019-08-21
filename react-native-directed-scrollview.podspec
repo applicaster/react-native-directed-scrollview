@@ -1,22 +1,17 @@
-require 'json'
-
-package = JSON.parse(File.read(File.join(__dir__, 'package.json')))
-
 Pod::Spec.new do |s|
-  s.name           = package['name']
-  s.version        = package['version']
-  s.summary        = package['description']
-  s.description    = package['description']
-  s.license        = package['license']
-  s.author         = package['author']
-  s.homepage       = package['homepage']
-  s.source         = { :git => 'https://github.com/ZY-Market/react-native-directed-scrollview.git', :tag => s.version }
+  s.name           = 'RCTDirectedScrollView'
+  s.version        = '1.0.0'
+  s.summary        = 'A natively implemented scrollview component which lets you specify different scroll directions for child content.'
+  s.description    = ''
+  s.license        = 'MIT'
+  s.author         = 'Chris Fisher'
+  s.homepage       = 'https://github.com/chrisfisher/react-native-directed-scrollview#readme'
+  s.source         = { :git => 'https://github.com/applicaster/react-native-directed-scrollview.git' }
 
   s.requires_arc   = true
-  s.platform       = :ios, '7.0'
+  s.platform       = :ios, '9.0'
 
-  s.preserve_paths = 'README.md', 'package.json', 'index.js'
-  s.source_files   = 'ios/DirectedScrollView/*.{h,m}'
+  s.source_files   = 'ios/RCTDirectedScrollView/*.{h,m}'
 
   s.dependency 'React'
 end
