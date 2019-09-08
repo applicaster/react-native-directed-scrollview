@@ -47,7 +47,8 @@ public class DirectedScrollView extends ReactViewGroup {
   private float startTouchY;
   private float scaleFactor = 1.0f;
   private boolean isScaleInProgress;
-  private boolean isScrollInProgress;
+  private boolean isVerticalScrollInProgress;
+  private boolean isHorizontalScrollInProgress;
   private float touchSlop;
   private float lastPositionX, lastPositionY;
   private boolean isDragging;
@@ -83,7 +84,8 @@ public class DirectedScrollView extends ReactViewGroup {
 
     int action = motionEvent.getAction();
     if (action == MotionEvent.ACTION_UP | action == MotionEvent.ACTION_CANCEL) {
-      isScrollInProgress = false;
+      isVerticalScrollInProgress = false;
+      isHorizontalScrollInProgress = false;
       isScaleInProgress = false;
       return false;
     }
@@ -207,13 +209,30 @@ public class DirectedScrollView extends ReactViewGroup {
 
     if (isScaleInProgress) return;
 
-    isScrollInProgress = true;
-
     float deltaX = motionEvent.getX() - startTouchX;
     float deltaY = motionEvent.getY() - startTouchY;
 
-    scrollX = startScrollX + deltaX;
-    scrollY = startScrollY + deltaY;
+    float x = startScrollX + deltaX;
+    float y = startScrollY + deltaY;
+
+    if (isHorizontalScrollInProgress) {
+      scrollX = x;
+      deltaY = 0;
+    }
+    else if (isVerticalScrollInProgress) {
+      scrollY = y;
+      deltaX = 0;
+    }
+    else if (deltaX != 0 && Math.abs(deltaX) > Math.abs(deltaY)) {
+      isHorizontalScrollInProgress = true;
+      scrollX = x;
+      deltaY = 0;
+    }
+    else if (deltaY != 0) {
+      isVerticalScrollInProgress = true;
+      scrollY = y;
+      deltaX = 0;
+    }
 
     if (bounces) {
       clampAndTranslateChildren(false, getMaxScrollY() <= 0 && !alwaysBounceVertical, getMaxScrollX() <= 0 && !alwaysBounceHorizontal);
@@ -225,9 +244,10 @@ public class DirectedScrollView extends ReactViewGroup {
   }
 
   private void onActionUp() {
-    if (isScrollInProgress) {
+    if (isHorizontalScrollInProgress || isVerticalScrollInProgress) {
       emitScrollEvent(ScrollEventType.END_DRAG, 0, 0);
-      isScrollInProgress = false;
+      isHorizontalScrollInProgress = false;
+      isVerticalScrollInProgress = false;
     }
 
     if (bounces) {
