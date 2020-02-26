@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   s.name           = 'RCTDirectedScrollView'
   s.version        = '1.0.0'
   s.summary        = 'A natively implemented scrollview component which lets you specify different scroll directions for child content.'
-  s.description    = ''
+  s.description    = 'A natively implemented scrollview component which lets you specify different scroll directions for child content'
   s.license        = 'MIT'
   s.author         = 'Chris Fisher'
   s.homepage       = 'https://github.com/chrisfisher/react-native-directed-scrollview#readme'
