@@ -10,7 +10,7 @@ import android.view.ViewParent;
 import android.view.ScaleGestureDetector;
 import android.view.animation.Interpolator;
 
-import androidx.interpolator.view.animation.FastOutLinearInInterpolator;
+import android.support.v4.view.animation.FastOutLinearInInterpolator;
 
 import com.facebook.react.views.scroll.ScrollEventType;
 import com.facebook.react.views.scroll.ScrollEvent;
