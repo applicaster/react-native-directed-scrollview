@@ -2,11 +2,12 @@ package com.rnds;
 
 
 
-import android.support.annotation.Nullable;
 
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewGroupManager;
 import com.facebook.react.uimanager.annotations.ReactProp;
+
+import javax.annotation.Nullable;
 
 public class DirectedScrollViewChildManager extends ViewGroupManager<DirectedScrollViewChild> {
 

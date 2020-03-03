@@ -1,7 +1,6 @@
 package com.rnds;
 
 
-import android.support.annotation.Nullable;
 
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewGroupManager;
@@ -11,6 +10,8 @@ import com.facebook.react.common.MapBuilder;
 import com.facebook.react.views.scroll.ScrollEventType;
 
 import java.util.Map;
+
+import javax.annotation.Nullable;
 
 class DirectedScrollViewManager extends ViewGroupManager<DirectedScrollView> {
 
